@@ -192,7 +192,7 @@ int libswd_cmdq_flush(libswd_ctx_t *libswdctx, libswd_cmd_t **cmdq, libswd_opera
   return LIBSWD_ERROR_BADOPCODE;
 
  int res, cmdcnt=0;
- libswd_cmd_t *cmd, *firstcmd, *lastcmd;
+ libswd_cmd_t *cmd=NULL, *firstcmd=NULL, *lastcmd=NULL;
 
  switch (operation){
   case LIBSWD_OPERATION_TRANSMIT_HEAD:

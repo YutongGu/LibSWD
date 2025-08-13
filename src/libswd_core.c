@@ -35,7 +35,7 @@
 /** \file libswd_core.c */
 
 #include <libswd.h>
-#include <config.h>
+// #include <config.h>
 
 /*******************************************************************************
  * \defgroup libswd_core Library and Context (de)initialization routines.
@@ -66,7 +66,7 @@ libswd_ctx_t *libswd_init(void){
  libswdctx->config.maxcmdqlen=LIBSWD_CMDQLEN_DEFAULT;
  libswdctx->config.loglevel=LIBSWD_LOGLEVEL_DEFAULT;
  libswdctx->config.autofixerrors=LIBSWD_AUTOFIX_DEFAULT;
- libswd_log(libswdctx, LIBSWD_LOGLEVEL_NORMAL, "LIBSWD_N: Using " PACKAGE_STRING " (http://libswd.sf.net)\nLIBSWD_N: (c) Tomasz Boleslaw CEDRO (http://www.tomek.cedro.info)\n");
+ libswd_log(libswdctx, LIBSWD_LOGLEVEL_NORMAL, "LIBSWD_N\n");
  return libswdctx;
 }
 

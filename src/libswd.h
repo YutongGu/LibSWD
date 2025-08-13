@@ -98,6 +98,10 @@
 #ifndef __LIBSWD_H__
 #define __LIBSWD_H__
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 /** SWD Packets Bit Fields and Values */
 /// Request packet Start field bitnumber, always set to 1.
 #define LIBSWD_REQUEST_START_BITNUM  0
@@ -691,10 +695,10 @@ typedef struct {
 #define LIBSWD_ARM_REGISTER_NAME_MAXLEN 32
 
 typedef struct libswd_arm_romtable_register {
- int address;
+ unsigned int address;
  char name[LIBSWD_ARM_REGISTER_NAME_MAXLEN];
- int default_value;
- int value;
+ unsigned int default_value;
+ unsigned int value;
  struct libswd_arm_romtable_register *next;
 } libswd_arm_register_t;
 
@@ -943,5 +947,9 @@ int libswd_debug_run(libswd_ctx_t *libswdctx, libswd_operation_t operation);
 int libswd_debug_is_halted(libswd_ctx_t *libswdctx, libswd_operation_t operation);
 
 int libswd_cli(libswd_ctx_t *libswdctx, char *command);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif
